@@ -28,7 +28,7 @@ public class Window {
         r = 0;
         b = 0;
         g = 0;
-        a = 0;
+        a = 1;
     }
 
     public static void changeScene(int newScene) {
