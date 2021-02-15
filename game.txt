@@ -1,0 +1,7 @@
+So I'm starting a log for our game engine (even though its been 8 months) because I think the people deserve
+ to know how this was made. So uhh it may seem we literally copied this dudes zip from github and just ripped
+  it right off but we actually did that because I must have accidentally deleted our project so I copied this
+   one guy's who was on the same part we were on. We aren't copy and pasting, I really hate just getting a
+    game engine from someone else. We just did that because we had no choice. Anyway this doesn't really
+    matter because copied the stuff we already wrote. Plus the guy said anyone can use it. We also have to
+    create all of the other stuff on our own.
