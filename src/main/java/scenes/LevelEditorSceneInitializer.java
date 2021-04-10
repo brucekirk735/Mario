@@ -3,10 +3,9 @@ package scenes;
 import components.*;
 import imgui.ImGui;
 import imgui.ImVec2;
-import jade.*;
+import jade.GameObject;
+import jade.Prefabs;
 import org.joml.Vector2f;
-import physics2dtmp.PhysicsSystem2D;
-import physics2dtmp.rigidbody.Rigidbody2D;
 import util.AssetPool;
 
 public class LevelEditorSceneInitializer extends SceneInitializer {
@@ -31,6 +30,8 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
         levelEditorStuff.addComponent(new GizmoSystem(gizmos));
         scene.addGameObjectToScene(levelEditorStuff);
     }
+
+
 
     @Override
     public void loadResources(Scene scene) {
@@ -79,9 +80,17 @@ public class LevelEditorSceneInitializer extends SceneInitializer {
 
             ImGui.pushID(i);
             if (ImGui.imageButton(id, spriteWidth, spriteHeight, texCoords[2].x, texCoords[0].y, texCoords[0].x, texCoords[2].y)) {
+
+
                 GameObject object = Prefabs.generateSpriteObject(sprite, 0.25f, 0.25f);
                 levelEditorStuff.getComponent(MouseControls.class).pickupObject(object);
+
+
             }
+
+
+
+
             ImGui.popID();
 
             ImVec2 lastButtonPos = new ImVec2();

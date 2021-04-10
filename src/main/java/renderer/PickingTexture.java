@@ -1,9 +1,7 @@
 package renderer;
 
 import static org.lwjgl.opengl.GL11.GL_TEXTURE_2D;
-import static org.lwjgl.opengl.GL14.GL_DEPTH_COMPONENT32;
 import static org.lwjgl.opengl.GL30.*;
-import static org.lwjgl.opengl.GL30.GL_FRAMEBUFFER;
 
 public class PickingTexture {
     private int pickingTextureId;
@@ -59,7 +57,7 @@ public class PickingTexture {
 
     public void enableWriting() {
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, fbo);
-    }
+     }
 
     public void disableWriting() {
         glBindFramebuffer(GL_DRAW_FRAMEBUFFER, 0);

@@ -1,9 +1,9 @@
 package jade;
 
+import renderer.PickingTexture;
 import observers.EventSystem;
 import observers.Observer;
 import observers.events.Event;
-import observers.events.EventType;
 import org.lwjgl.Version;
 import org.lwjgl.glfw.GLFWErrorCallback;
 import org.lwjgl.opengl.GL;
@@ -30,6 +30,10 @@ public class Window implements Observer {
     private static Window window = null;
 
     private static Scene currentScene;
+
+    private static PickingTexture pickObj;
+
+    private GameObject go;
 
     private Window() {
         this.width = 1920;
@@ -158,6 +162,20 @@ public class Window implements Observer {
             Renderer.bindShader(pickingShader);
             currentScene.render();
 
+            if (MouseListener.mouseButtonDown(GLFW_MOUSE_BUTTON_RIGHT)) {
+                int x = (int)MouseListener.getScreenX();
+                int y = (int)MouseListener.getScreenY();
+                System.out.println(pickingTexture.readPixel(x,y));
+
+
+                glDeleteTextures(pickingTexture.readPixel(x,y));
+
+
+                if(pickingTexture.readPixel(x,y) > 0)
+                {
+                    System.out.println("yup it sure is larger than zero");
+                }
+            }
             pickingTexture.disableWriting();
             glEnable(GL_BLEND);
 
